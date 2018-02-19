@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+		{{ partial "head.html" .}}
+		{{ partial "js.html" .}}
+		
+		<link rel="stylesheet" href="css/flipclock.css">
+		<script src="https://momentjs.com/downloads/moment.js"></script>
+		<script src="js/flipclock.min.js"></script>
+		
+    </head>
+    <body>
+
+        {{ partial "nav.html" .}}
+
+		{{ partial "hero.html" .}}
+		
+        <!--{{ partial "intro.html" .}}-->
+
+		{{ if .Site.Params.work.enable }}
+       		{{ partial "work.html" .}}
+       	{{ end }}
+
+		{{ if .Site.Params.testimonials.enable }}
+        	{{ partial "testimonials.html" .}}
+		{{ end }}
+
+		{{ if .Site.Params.services.enable }}
+        	{{ partial "services.html" .}}
+		{{ end }}
+		{{ if .Site.Params.prayers.enable }}
+			{{ partial "prayers.html" .}}
+		{{ end }}
+		{{ if .Site.Params.about.enable }}
+        	{{ partial "about.html" .}}
+		{{ end }}
+
+		
+
+		{{ if .Site.Params.contact.enable }}
+        	{{ partial "contact.html" .}}
+        {{ end }}
+
+        {{ if .Site.Params.footer.enable }}
+        	{{ partial "footer.html" .}}
+		{{ end }}
+		
+
+    </body>
+</html>

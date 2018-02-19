@@ -1,0 +1,104 @@
+	
+	<style>
+		#prayer-table {
+			background-color: white;
+			z-index: 999;
+		}
+	</style>
+	<section id="fh5co-counters" data-section="prayers" style="background-image: url(images/{{ .Site.Params.prayers.background }});" data-stellar-background-ratio="0.5">
+		<div class="fh5co-overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center to-animate">
+					<h2>{{ .Site.Params.prayers.title | markdownify }}</h2>
+				</div>
+			</div>
+			<div class="row">
+					<div class="col-md-12 text-center to-animate">
+							<script>
+								var fileName=''
+								fileName=getFileName(moment())
+								$.getJSON(fileName,setTableTime);							
+								function setTableTime(time){
+									var table = document.getElementById("prayer-table");
+									var row = table.insertRow();
+									var currDay = moment(time.date,"DD-MM");
+									if(currDay.isSame(moment(), 'day')) {
+										row.style.backgroundColor =  "#E2FEF1";
+									}
+									addCell(row,currDay.format("ddd MMM D, YYYY"));
+									addCell(row,time.fajr);
+									addCell(row,time.fajrIqma);
+									addCell(row,time.zuhr);
+									if(currDay.isoWeekday() == 5){
+										//friday
+										var fridayValue = "2:00 PM"
+										var month = currDay.month()
+										if(month >= 2 && month <= 9) {
+											fridayValue += "<br> 3:15 PM";
+
+										}
+										var cell = addCell(row,fridayValue);
+										cell.style.backgroundColor = "#e2fcab";
+									} else {
+										addCell(row,time.zuhrIqma);
+									}
+									addCell(row,time.asr);
+									addCell(row,time.asrIqma);
+									addCell(row,time.maghrib);
+									addCell(row,time.isha);
+									addCell(row,time.ishaIqma);
+
+									if(moment().add(6,'days').isAfter(currDay.add(1,'day'))){
+										$.getJSON(getFileName(currDay),setTableTime);	
+									}
+
+								}
+								function addCell(row,value){
+									var add=row.insertCell(-1);
+									add.innerHTML=value
+									return add;
+								}
+								function getFileName(time) {
+									return 'PrayerTime/'+time.format('DD-MM')+'.json'
+								}
+							</script>
+						<div class="table-responsive">
+						<table id="prayer-table" class="table" >
+								<colgroup>
+									<col>
+									<col span="2" style="background-color:rgb(240, 240, 240)">
+									<col span="2" >
+									<col span="2" style="background-color:rgb(240, 240, 240)">
+									<col span="1" >
+									<col span="2" style="background-color:rgb(240, 240, 240)">
+								</colgroup>
+								<thead class=""> 
+									<tr>
+										<th scope="col">Date</th>
+										<th scope="col">Fajr</th>
+										<th scope="col">Iqama</th>
+										<th scope="col">Duhar *</th>
+										<th scope="col">Iqama</th>
+										<th scope="col">Asr</th>
+										<th scope="col">Iqama</th>
+										<th scope="col">Maghrib *</th>
+										<th scope="col">Isha</th>
+										<th scope="col">Iqama</th>										
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</div>
+							<p>* Maghrib Iqama is 5 Mins after the Adhan<br>
+								* Nov to Feb, only one Jummah 2pm<br>
+								* Mar to Oct, two jamaats 2pm and 3:15 pm
+							</p>
+							
+						</div>
+
+			</div>
+		</div>
+	</section>

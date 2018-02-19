@@ -17,10 +17,12 @@ theme = "hugo-elate-theme"
     brand = "Rexdale Masjid"
     home = "Home"
     work = "Work"
-    testimonials = "Testimonials"
+    testimonials = "News &amp; Updates"
     services = "Services"
     about = "About"
     contact = "Contact"
+    prayers='Prayer Times'
+
 
     # You can add custom links before or after the default links
     # Assign a weight to define the order
@@ -39,7 +41,7 @@ theme = "hugo-elate-theme"
   
   # Hero section
   [params.hero]
-    title = "Do something you love."
+    title = "Time left until..."
     subtitle = 'Another free HTML5 bootstrap template by <a href="http://freehtml5.co/" target="_blank" title="Free HTML5 Bootstrap Templates">FREEHTML5.co</a> released under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons 3.0</a><br> ported for Hugo by <a href="http://saey55.gitlab.io/pietercv" target="_blank">Pieter Saey</a>'
  
   # Intro section
@@ -79,7 +81,7 @@ theme = "hugo-elate-theme"
 
   # Work section
   [params.work]
-    enable = true
+    enable = false
     title = "HIFZ SCHOOL PROGRAM"
     description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
     footertext = '** Demo images from <a href="http://plmd.me/" target="_blank">plmd.me</a>'
@@ -123,149 +125,65 @@ theme = "hugo-elate-theme"
   # Testimonials section
   [params.testimonials]
     enable = true
-    title = "Testimonials"
-    description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
-
-    [[params.testimonials.item]]
-      quote = "&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;"
-      person = 'Jean Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span>'
-      img = "person1.jpg"
-      alt = "Person1"
-
-    [[params.testimonials.item]]
-      quote = "&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;"
-      person = 'John Doe, Senior UI <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span>'
-      img = "person2.jpg"
-      alt = "Person2"
-
-    [[params.testimonials.item]]
-      quote = "&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. &rdquo;"
-      person = 'Chris Nash, Director <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span>'
-      img = "person3.jpg"
-      alt = "Person3"
-    
-
-
+    title = "News"
+    description = "For latest news and updates, follow us on twitter @RexdaleMasjid!"
 
   # Services section
   [params.services]
-    enable = true
+    enable = false
     title = "Services"
     description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
 
     [[params.services.item]]
-      title = "Brand &amp; Strategy"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+      title = "Hifz Full time &amp; Part time"
+      description = "It is the aim of the Hifz Program for students to complete the Hifz-ul Qur’an under the guidance of qualified and experienced Teachers according to the tenets of Tajweed and Tarteel. "
       icon = "icon-anchor"
-
     [[params.services.item]]
-      title = "Web &amp; Interface"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+      title = "Summer School"
+      description = "Details for our summer school program will be available soon."      
+      icon = "icon-monitor"
+    [[params.services.item]]
+      title = "Naazira"
+      description = "Details for our Naazira program will be available soon."
       icon = "icon-layers2"
     [[params.services.item]]
-      title = "Photo &amp; Video"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"
+      title = "Madrassa"
+      description = "Details for our Madrassa will be available soon."
       icon = "icon-video2"
 
-      [[params.services.item]]
-      title = "CMS &amp; eCommerce"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean"      
-      icon = "icon-monitor"
+    
 
   # About section
   [params.about]
     enable = true
     title = "About"
-    description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
+    description = """Rexdale Jame Masjid was first established in 1987 as a musalla in a small shop on the second floor with praying capacity of 30 - 35. \
+          Just after a year this musalla, shifted to a bigger location to accommodate 100-125 worshippers. \
+          In 1992 it again relocated to a still bigger unit with praying capacity of 150-200. \
+          During the year 2001 the existing unit was extended by adding one more unit, thus maintaining the total praying capacity of 300 - 400.
 
-    [[params.about.item]]
-      name = "Jean Smith"
-      position = "Web Designer"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
-      img = "person1.jpg"
-      alt = "Person1"
-      social = [
-        ["icon-twitter", "#"],
-        ["icon-facebook", "#"],
-        ["icon-linkedin", "#"]
-      ]
 
-    [[params.about.item]]
-      name = "Rob Smith"
-      position = "Web Developer"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
-      img = "person2.jpg"
-      alt = "Person2"
-      social = [
-        ["icon-twitter", "#"],
-        ["icon-facebook", "#"],
-        ["icon-github", "#"]
-      ]
-
-    [[params.about.item]]
-      name = "Larry Ben"
-      position = "Web Designer"
-      description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"
-      img = "person3.jpg"
-      alt = "Person3"
-      social = [
-        ["icon-twitter", "#"],
-        ["icon-facebook", "#"],
-        ["icon-dribbble", "#"]
-      ]      
-
+Alhamdulillah, this musalla being one of the oldest facilities, serving successfully the neighboring Muslim community for over 20 years.
+"""
   # Counters section
-  [params.counters]
+  [params.prayers]
     enable = true
-    title = "Stats"
+    title = "Prayer Times"
     background = "full_image_1.jpg"
-
-    [[params.counters.item]]
-      description = "Finished projects"
-      icon = "icon-briefcase"
-      from = 0
-      to = 89
-      interval = 50
-      speed = 5000
-
-    [[params.counters.item]]
-      description = "Lines of code"
-      icon = "icon-code"
-      from = 0
-      to = 2343409
-      interval = 50
-      speed = 5000
-
-    [[params.counters.item]]
-      description = "Cups of coffee"
-      icon = "icon-cup"
-      from = 0
-      to = 1302
-      interval = 50
-      speed = 5000
-
-    [[params.counters.item]]
-      description = "Happy clients"
-      icon = "icon-people"
-      from = 0
-      to = 52
-      interval = 50
-      speed = 5000
 
   # Contact section
   [params.contact]
     enable = true
     map = true
-    form = true
+    form = false
     title = "Get in touch"
-    description = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts."
+    description = "Please feel free to contact us or drop by anytime!"
     
     # Available icons: http://simplelineicons.com/
     details = [
-        ["icon-home", "5555 Love Paradise 56 New Clity 5655, <br> Excel Tower United Kingdom"],
-        ["icon-phone", "(123) 465-6789"],
-        ["icon-envelope", "info@freehtml5.co"],
-        ["icon-globe", '<a href="http://freehtml5.co/" target="_blank">freehtml5.co</a>']
+        ["icon-home", "127 Westmore Dr, Etobicoke, ON M9V 3Y6"],
+        ["icon-phone", "(416) 744-3474"],
+        ["icon-envelope", "info@rexdaleMasjid.ca"]
       ]
 
     name = "Name"
@@ -277,9 +195,9 @@ theme = "hugo-elate-theme"
   # Footer section
   [params.footer]
     enable = true
-    copyright = '&copy; Elate Free HTML5. All Rights Reserved. <br>Created by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Images: <a href="http://pexels.com/" target="_blank">Pexels</a>, <a href="http://plmd.me/" target="_blank">plmd.me</a> <br>Hugo port by: <a href="https://github.com/saey55" target="_blank">saey55</a>'
+    copyright = '&copy; Rexdale Masjid. All Rights Reserved.'
     links = [
         ["icon-twitter", "#twitter"],
         ["icon-facebook", "#facebook"],
-        ["icon-youtube", "#youtube"]
+        #["icon-youtube", "#youtube"]
       ]

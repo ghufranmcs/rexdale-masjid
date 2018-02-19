@@ -1,0 +1,66 @@
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+						<h1  id="prayerName", class="to-animate">Time Left Until </h1>
+		
+							<div class="timer flip-counter clock to-animate"></div>
+							<h2 id="adhan-time-note" class="to-animate">Adhan is at </h2>
+
+							</div>
+							<script>
+								var fileName= getFileName(moment())
+								var nextPrayerTime=''
+
+								$.getJSON(fileName,setTime);
+
+								function setTime(time){
+									var currentTime = moment();
+									var prayerName='';
+									if(currentTime.isBefore(getTime(time.date, time.fajrIqma))) {
+										prayerName='Fajr'
+										nextPrayerTime= getTime(time.date, time.fajrIqma)
+									} else if(currentTime.isBefore(getTime(time.date, time.zuhrIqma))){
+										nextPrayerTime= getTime(time.date, time.zuhrIqma)
+										prayerName='Dhuhr'
+									} else if(currentTime.isBefore(getTime(time.date, time.asrIqma))){
+										nextPrayerTime= getTime(time.date, time.asrIqma)
+										prayerName='Asr'
+									} else if( currentTime.isBefore(getTime(time.date, time.maghribIqma))){
+										nextPrayerTime= getTime(time.date, time.maghribIqma)
+										prayerName='Maghrib'
+									} else if( currentTime.isBefore(getTime(time.date, time.ishaIqma))){
+										nextPrayerTime= getTime(time.date, time.ishaIqma)
+										prayerName='Isha'
+									}else {
+										var fileName= getFileName(currentTime.add(1,'day'))
+										console.log(fileName)
+										$.getJSON(fileName,setTime)
+										return 
+									}
+									$("#prayerName").append(prayerName + " Iqama")
+									console.log(prayerName, time, time[prayerName.toLowerCase()])
+									$("#adhan-time-note").append(time[prayerName.toLowerCase()])
+									
+									var clock = new FlipClock($('.timer'),(nextPrayerTime-currentTime)/1000, {
+										countdown: true,
+									});
+								}
+								function getTime(date, time){
+									return moment(date + ' '+time, 'DD-MM h:mm a')
+								}
+								function getFileName(time) {
+									return 'PrayerTime/'+time.format('DD-MM')+'.json'
+								}
+								
+							</script>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slant"></div>
+	</section>

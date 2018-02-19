@@ -5,7 +5,7 @@ var inputStream = fs.createReadStream('iqma-times.csv', 'utf8');
 var counter = 0;
 var colNames = null;
 inputStream
-   .pipe(csv({  headers: ['date', 'fajr','fajrIqma', 'sunrise','zuhr','zuhrIqma','asr','asrIqma','maghrib','magribIqma','isha','ishaIqma'] }))
+   .pipe(csv({  headers: ['date', 'fajr','fajrIqma', 'sunrise','zuhr','zuhrIqma','asr','asrIqma','maghrib','maghribIqma','isha','ishaIqma'] }))
    .on('data', function (row) {
        console.log('A row arrived: ', row);
        if(counter == 0){
