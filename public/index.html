@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+    <head>
+	<meta name="generator" content="Hugo 0.30.2" />
+		    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Elate theme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+    <meta http-equiv="content-language" content="en-us" />
+
+  
+
+    
+    
+    <meta name="og:site_name" content="Elate theme">
+    <meta name="og:title" content="Elate theme">
+    <meta name="og:url" content="localhost:1313/">
+    <meta name="og:image" content="localhost:1313images/">
+    <meta name="twitter:title" content="Elate theme" />
+    <meta name="twitter:url" content="localhost:1313/" />
+    <meta name="twitter:image" content="localhost:1313images/" />
+    <meta name="twitter:card" content="" />
+    
+    
+    
+    <link rel="canonical" href="#ZgotmplZ"/>
+
+    
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    
+    
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/icomoon.css">
+    
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    <link rel="stylesheet" href="css/custom1.css">
+    
+    <link rel="stylesheet" href="css/custom2.css">
+    
+
+    
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    
+    
+
+			
+	<script src="js/jquery.min.js"></script>
+	
+	<script src="js/jquery.easing.1.3.js"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+	<script src="js/jquery.waypoints.min.js"></script>
+	
+	<script src="js/jquery.stellar.min.js"></script>
+	
+	<script src="js/jquery.countTo.js"></script>
+	
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/magnific-popup-options.js"></script>
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script>
+	
+	
+	<script src="js/main.js"></script>
+
+		
+		<link rel="stylesheet" href="css/flipclock.css">
+		<script src="https://momentjs.com/downloads/moment.js"></script>
+		<script src="js/flipclock.min.js"></script>
+		
+    </head>
+    <body>
+
+            <header role="banner" id="fh5co-header">
+        <div class="container">
+            
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a class="navbar-brand" href="index.html">Rexdale Masjid</a> 
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+
+                    
+
+                    <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+                    
+                    
+
+                    
+                    <li><a href="#" data-nav-section="testimonials"><span>News &amp; Updates</span></a></li> 
+                    
+                    <li><a href="#" data-nav-section="prayers"><span>Prayer Times</span></a></li> 
+                    
+
+                    
+
+                    
+                    <li><a href="#" data-nav-section="about"><span>About</span></a></li> 
+                    
+
+                    
+                    <li><a href="#" data-nav-section="contact"><span>Contact</span></a></li> 
+                    
+                    
+                    
+                </ul>
+            </div>
+        </nav>
+        
+    </div>
+</header>
+
+
+			<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+						<h1  id="prayerName", class="to-animate">Time Left Until </h1>
+		
+							<div class="timer flip-counter clock to-animate"></div>
+							<h2 id="adhan-time-note" class="to-animate">Adhan is at </h2>
+
+							</div>
+							<script>
+								var fileName= getFileName(moment())
+								var nextPrayerTime=''
+
+								$.getJSON(fileName,setTime);
+
+								function setTime(time){
+									var currentTime = moment();
+									var prayerName='';
+									if(currentTime.isBefore(getTime(time.date, time.fajrIqma))) {
+										prayerName='Fajr'
+										nextPrayerTime= getTime(time.date, time.fajrIqma)
+									} else if(currentTime.isBefore(getTime(time.date, time.zuhrIqma))){
+										nextPrayerTime= getTime(time.date, time.zuhrIqma)
+										prayerName='Dhuhr'
+									} else if(currentTime.isBefore(getTime(time.date, time.asrIqma))){
+										nextPrayerTime= getTime(time.date, time.asrIqma)
+										prayerName='Asr'
+									} else if( currentTime.isBefore(getTime(time.date, time.maghribIqma))){
+										nextPrayerTime= getTime(time.date, time.maghribIqma)
+										prayerName='Maghrib'
+									} else if( currentTime.isBefore(getTime(time.date, time.ishaIqma))){
+										nextPrayerTime= getTime(time.date, time.ishaIqma)
+										prayerName='Isha'
+									}else {
+										var fileName= getFileName(currentTime.add(1,'day'))
+										console.log(fileName)
+										$.getJSON(fileName,setTime)
+										return 
+									}
+									$("#prayerName").append(prayerName + " Iqama")
+									console.log(prayerName, time, time[prayerName.toLowerCase()])
+									$("#adhan-time-note").append(time[prayerName.toLowerCase()])
+									
+									var clock = new FlipClock($('.timer'),(nextPrayerTime-currentTime)/1000, {
+										countdown: true,
+									});
+								}
+								function getTime(date, time){
+									return moment(date + ' '+time, 'DD-MM h:mm a')
+								}
+								function getFileName(time) {
+									return 'PrayerTime/'+time.format('DD-MM')+'.json'
+								}
+								
+							</script>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slant"></div>
+	</section>
+		
+        
+
+		
+
+		
+        		<section id="fh5co-testimonials" data-section="testimonials">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">News</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>For latest news and updates, follow us on twitter @RexdaleMasjid!</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+					<a class="twitter-timeline" href="https://twitter.com/RexdaleMasjid?ref_src=twsrc%5Etfw">Tweets by RexdaleMasjid</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+	</section>
+		
+
+		
+		
+				
+	<style>
+		#prayer-table {
+			background-color: white;
+			z-index: 999;
+		}
+	</style>
+	<section id="fh5co-counters" data-section="prayers" style="background-image: url(images/full_image_1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="fh5co-overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center to-animate">
+					<h2>Prayer Times</h2>
+				</div>
+			</div>
+			<div class="row">
+					<div class="col-md-12 text-center to-animate">
+							<script>
+								var fileName=''
+								fileName=getFileName(moment())
+								$.getJSON(fileName,setTableTime);							
+								function setTableTime(time){
+									var table = document.getElementById("prayer-table");
+									var row = table.insertRow();
+									var currDay = moment(time.date,"DD-MM");
+									if(currDay.isSame(moment(), 'day')) {
+										row.style.backgroundColor =  "#E2FEF1";
+									}
+									addCell(row,currDay.format("ddd MMM D, YYYY"));
+									addCell(row,time.fajr);
+									addCell(row,time.fajrIqma);
+									addCell(row,time.zuhr);
+									if(currDay.isoWeekday() == 5){
+										
+										var fridayValue = "2:00 PM"
+										var month = currDay.month()
+										if(month >= 2 && month <= 9) {
+											fridayValue += "<br> 3:15 PM";
+
+										}
+										var cell = addCell(row,fridayValue);
+										cell.style.backgroundColor = "#e2fcab";
+									} else {
+										addCell(row,time.zuhrIqma);
+									}
+									addCell(row,time.asr);
+									addCell(row,time.asrIqma);
+									addCell(row,time.maghrib);
+									addCell(row,time.isha);
+									addCell(row,time.ishaIqma);
+
+									if(moment().add(6,'days').isAfter(currDay.add(1,'day'))){
+										$.getJSON(getFileName(currDay),setTableTime);	
+									}
+
+								}
+								function addCell(row,value){
+									var add=row.insertCell(-1);
+									add.innerHTML=value
+									return add;
+								}
+								function getFileName(time) {
+									return 'PrayerTime/'+time.format('DD-MM')+'.json'
+								}
+							</script>
+						<div class="table-responsive">
+						<table id="prayer-table" class="table" >
+								<colgroup>
+									<col>
+									<col span="2" style="background-color:rgb(240, 240, 240)">
+									<col span="2" >
+									<col span="2" style="background-color:rgb(240, 240, 240)">
+									<col span="1" >
+									<col span="2" style="background-color:rgb(240, 240, 240)">
+								</colgroup>
+								<thead class=""> 
+									<tr>
+										<th scope="col">Date</th>
+										<th scope="col">Fajr</th>
+										<th scope="col">Iqama</th>
+										<th scope="col">Duhar *</th>
+										<th scope="col">Iqama</th>
+										<th scope="col">Asr</th>
+										<th scope="col">Iqama</th>
+										<th scope="col">Maghrib *</th>
+										<th scope="col">Isha</th>
+										<th scope="col">Iqama</th>										
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</div>
+							<p>* Maghrib Iqama is 5 Mins after the Adhan<br>
+								* Nov to Feb, only one Jummah 2pm<br>
+								* Mar to Oct, two jamaats 2pm and 3:15 pm
+							</p>
+							
+						</div>
+
+			</div>
+		</div>
+	</section>
+		
+		
+        		<section id="fh5co-about" data-section="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">About</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3><p>Rexdale Jame Masjid was first established in 1987 as a musalla in a small shop on the second floor with praying capacity of 30 - 35. Just after a year this musalla, shifted to a bigger location to accommodate 100-125 worshippers. In 1992 it again relocated to a still bigger unit with praying capacity of 150-200. During the year 2001 the existing unit was extended by adding one more unit, thus maintaining the total praying capacity of 300 - 400.</p>
+
+<p>Alhamdulillah, this musalla being one of the oldest facilities, serving successfully the neighboring Muslim community for over 20 years.</p>
+</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			
+			</div>
+		</div>
+	</section>
+		
+
+		
+
+		
+        		<section id="fh5co-contact" data-section="contact" data-stellar-background-ratio="0.5" style="background-color: beige">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Get in touch</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>Please feel free to contact us or drop by anytime!</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-md">
+				<div class="col-md-6 to-animate">
+					<h3></h3>
+					<ul class="fh5co-contact-info">
+					
+						<li class="fh5co-contact-address "><i class="icon-home"></i>127 Westmore Dr, Etobicoke, ON M9V 3Y6</li>
+					
+						<li class="fh5co-contact-address "><i class="icon-phone"></i>(416) 744-3474</li>
+					
+						<li class="fh5co-contact-address "><i class="icon-envelope"></i>info@rexdaleMasjid.ca</li>
+					
+					</ul>
+				</div>
+				<div class="col-md-6 to-animate">
+					<div id="map" class="to-animate"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+        
+
+        
+        		<footer id="footer" role="contentinfo">
+		<a href="#" class="gotop js-gotop"><i class="icon-arrow-up2"></i></a>
+		<div class="container">
+			<div class="">
+				<div class="col-md-12 text-center">
+					<p>&copy; Rexdale Masjid. All Rights Reserved.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="social social-circle">
+					
+						<li><a href="#twitter"><i class="icon-twitter"></i></a></li>
+					
+						<li><a href="#facebook"><i class="icon-facebook"></i></a></li>
+					
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+		
+		
+
+    </body>
+</html>
