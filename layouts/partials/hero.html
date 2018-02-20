@@ -42,7 +42,7 @@
 										return 
 									}
 									$("#prayerName").append(prayerName + " Iqama")
-									console.log(prayerName, time, time[prayerName.toLowerCase()])
+									prayerName = prayerName == "Dhuhr" ? "zuhr" : prayerName;
 									$("#adhan-time-note").append(time[prayerName.toLowerCase()])
 									
 									var clock = new FlipClock($('.timer'),(nextPrayerTime-currentTime)/1000, {

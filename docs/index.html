@@ -181,7 +181,7 @@
 										return 
 									}
 									$("#prayerName").append(prayerName + " Iqama")
-									console.log(prayerName, time, time[prayerName.toLowerCase()])
+									prayerName = prayerName == "Dhuhr" ? "zuhr" : prayerName;
 									$("#adhan-time-note").append(time[prayerName.toLowerCase()])
 									
 									var clock = new FlipClock($('.timer'),(nextPrayerTime-currentTime)/1000, {
@@ -222,7 +222,7 @@
 				</div>
 			</div>
 			<div class="row">
-					<a class="twitter-timeline" href="https://twitter.com/RexdaleMasjid?ref_src=twsrc%5Etfw">Tweets by RexdaleMasjid</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<a class="twitter-timeline" data-height="400" href="https://twitter.com/RexdaleMasjid?ref_src=twsrc%5Etfw">Tweets by RexdaleMasjid</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</div>
 	</section>
