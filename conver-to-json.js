@@ -1,7 +1,7 @@
 const fs = require("fs");
 var csv = require('csv-parser');
 
-var inputStream = fs.createReadStream('iqma-times.csv', 'utf8');
+var inputStream = fs.createReadStream('iqma-times-ramadan.csv', 'utf8');
 var counter = 0;
 var colNames = null;
 inputStream
