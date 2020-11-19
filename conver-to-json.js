@@ -1,7 +1,7 @@
 const fs = require("fs");
 var csv = require('csv-parser');
 
-var inputStream = fs.createReadStream('iqma-times-ramadan.csv', 'utf8');
+var inputStream = fs.createReadStream('iqma-times.csv', 'utf8');
 var counter = 0;
 var colNames = null;
 inputStream
@@ -11,7 +11,7 @@ inputStream
        if(counter == 0){
           counter++;
        } else {
-        fs.writeFileSync('static/PrayerTime/'+row.date+'.json',JSON.stringify(row, undefined, 2));
+        fs.writeFileSync('docs/PrayerTime/'+row.date+'.json',JSON.stringify(row, undefined, 2));
        }
    })
    .on('end', function (data) {

@@ -1,7 +1,7 @@
 {
   "date": "21-11",
   "fajr": "5:55 AM",
-  "fajrIqma": "6:45 AM",
+  "fajrIqma": "6:30 AM",
   "sunrise": "7:19 AM",
   "zuhr": "12:03 PM",
   "zuhrIqma": "2:00 PM",
@@ -10,5 +10,5 @@
   "maghrib": "4:47 PM",
   "maghribIqma": "4:47 PM",
   "isha": "6:11 PM",
-  "ishaIqma": "7:00 PM"
+  "ishaIqma": "6:30 PM"
 }
