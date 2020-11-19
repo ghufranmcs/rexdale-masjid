@@ -32,11 +32,12 @@
 									addCell(row,time.zuhr);
 									if(currDay.isoWeekday() == 5){
 										//friday
-										var fridayValue = "2:00 PM"
+										var fridayValue = "";
 										var month = currDay.month()
-										if(month >= 2 && month <= 9) {
-											fridayValue += "<br> 3:15 PM";
-
+										if (month >= 2 && month <= 9) {
+											fridayValue = "2:00 PM<br> 3:15 PM";
+										} else {
+											fridayValue = "12:30 PM<br> 1:15 PM<br> 2:00 PM";
 										}
 										var cell = addCell(row,fridayValue);
 										cell.style.backgroundColor = "#e2fcab";
@@ -92,10 +93,10 @@
 								</tbody>
 							</table>
 						</div>
-							<p>* Maghrib Iqama is 5 Mins after the Adhan<br>
-								* Nov to Feb, only one Jummah 2pm<br>
-								* Mar to Oct, two jamaats 2pm and 3:15 pm
-							</p>
+						<p>* Maghrib Iqama is 5 Mins after the Adhan<br>
+							* Nov to Feb, three Jummah jamaats: 12:30 pm, 1:15 pm, and 2 pm<br>
+							* Mar to Oct, two jamaats: 2 pm and 3:15 pm
+						</p>
 							
 						</div>
 
