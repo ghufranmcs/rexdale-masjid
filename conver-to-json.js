@@ -11,7 +11,8 @@ inputStream
        if(counter == 0){
           counter++;
        } else {
-        fs.writeFileSync('docs/PrayerTime/'+row.date+'.json',JSON.stringify(row, undefined, 2));
+        row.date = row.date.substring(0,5);
+        fs.writeFileSync('docs/PrayerTime/'+row.date +'.json',JSON.stringify(row, undefined, 2));
        }
    })
    .on('end', function (data) {

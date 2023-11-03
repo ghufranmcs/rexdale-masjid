@@ -1,14 +1,14 @@
 {
   "date": "09-03",
-  "fajr": "6:22 AM",
-  "fajrIqma": "6:45 AM",
-  "sunrise": "7:41 AM",
-  "zuhr": "1:28 PM",
-  "zuhrIqma": "2:00 PM",
-  "asr": "5:29 PM",
-  "asrIqma": "6:00 PM",
-  "maghrib": "7:16 PM",
-  "maghribIqma": "7:16 PM",
-  "isha": "8:35 PM",
-  "ishaIqma": "9:00 PM"
+  "fajr": "5:22 AM",
+  "fajrIqma": "6:15 AM",
+  "sunrise": "6:41 AM",
+  "zuhr": "12:28 PM",
+  "zuhrIqma": "1:00 PM",
+  "asr": "4:29 PM",
+  "asrIqma": "4:45 PM",
+  "maghrib": "6:16 PM",
+  "maghribIqma": "6:16 PM",
+  "isha": "7:35 PM",
+  "ishaIqma": "7:45 PM"
 }
