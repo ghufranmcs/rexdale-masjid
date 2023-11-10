@@ -4,11 +4,11 @@
   "fajrIqma": "5:00 AM",
   "sunrise": "5:36 AM",
   "zuhr": "1:19 PM",
-  "zuhrIqma": "3:15 PM",
-  "asr": "",
-  "asrIqma": "",
-  "maghrib": "",
-  "maghribIqma": "",
-  "isha": "",
-  "ishaIqma": ""
+  "zuhrIqma": "2:00 PM",
+  "asr": "6:40 PM",
+  "asrIqma": "7:00 PM",
+  "maghrib": "9:03 PM",
+  "maghribIqma": "9:03 PM",
+  "isha": "10:26 PM",
+  "ishaIqma": "10:40 PM"
 }
