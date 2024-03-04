@@ -267,7 +267,9 @@
 										
 										var fridayValue = "";
 										var month = currDay.month()
-										if (month >= 2 && month <= 10) {
+										var march9 = moment().month(2).date(9)
+
+										if (currDay.isAfter(march9) && month <= 10) {
 											fridayValue = "2:00 PM<br> 3:15 PM";
 										} else {
 											fridayValue = "1:00 PM<br> 2:00 PM<br>";
